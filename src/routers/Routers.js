@@ -12,13 +12,11 @@ function Routers() {
   return (
     <>
      <Routes>
-        <Route element={<PageLayout/>}>
             <Route index element={<Home/>}/>
             <Route path='/detail' element={<Detail/>}/>
             <Route path='/admin' element={<Admin/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/profil' element={<Profil/>}/>
-        </Route>
      </Routes>
     </>
   )
