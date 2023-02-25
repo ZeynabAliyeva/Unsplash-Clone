@@ -1,9 +1,10 @@
 import './App.css';
+import PageLayout from './components/PageLayout';
 
 function App() {
   return (
   <>
-  <h1>Unsplash</h1>
+  <PageLayout/>
   </>
   );
 }
