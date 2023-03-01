@@ -1,7 +1,5 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Header from '../components/Header'
-import PageLayout from '../components/PageLayout'
 import Admin from '../pages/Admin'
 import Detail from '../pages/Detail'
 import Home from '../pages/Home'
