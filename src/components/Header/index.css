@@ -1,7 +1,7 @@
 .headerWrapper {
   display: flex;
   justify-content: space-between;
-  margin: 15px;
+  margin: 0 65px;
 }
 .headerLeft {
   width: 500px;
@@ -11,7 +11,7 @@
   align-items: center;
 }
 .headerRight {
-  width: 500px;
+  width: 350px;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -54,9 +54,6 @@
 .user_info {
   padding: 15px;
 }
-.hamburgerMenu {
-  padding-right: 50px;
-}
 .srcIcon {
   width: 17px;
   height: 17px;
@@ -64,4 +61,18 @@
 form {
   display: flex;
   justify-content: space-between;
+}
+.hamburgerMenu {
+  position: relative;
+}
+.navBar {
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 1;
+  left: -90px;
+  top: 75px;
+}
+.navLi {
+  padding: 15px;
+  margin: 50px;
 }
