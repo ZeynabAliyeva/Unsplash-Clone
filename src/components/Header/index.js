@@ -6,6 +6,8 @@ import "./index.css";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import AddButton from "./AddButton";
+
 function Header() {
   let activeStyle = {
     textDecoration: "underline",
@@ -43,7 +45,7 @@ function Header() {
       </div>
       <div className="headerRight">
         <div className="header_btn_box">
-          <button className="header_btn">Add a photo</button>
+          <AddButton className="addPhotoModal" />
         </div>
         <div className="user_info">
           <p>
@@ -76,8 +78,8 @@ function Header() {
                 <li className="navLi">
                   <NavLink
                     to="/detail"
-                    className={({ isActive }) =>
-                      isActive ? activeClassName : undefined
+                    style={({ isActive }) =>
+                      isActive ? activeStyle : undefined
                     }
                   >
                     Detail
@@ -86,7 +88,7 @@ function Header() {
                 <li className="navLi">
                   <NavLink to="/profil">
                     {({ isActive }) => (
-                      <span className={isActive ? activeClassName : undefined}>
+                      <span style={isActive ? activeStyle : undefined}>
                         Profil
                       </span>
                     )}
@@ -95,7 +97,7 @@ function Header() {
                 <li className="navLi">
                   <NavLink to="/admin">
                     {({ isActive }) => (
-                      <span className={isActive ? activeClassName : undefined}>
+                      <span style={isActive ? activeStyle : undefined}>
                         Admin
                       </span>
                     )}
@@ -104,7 +106,7 @@ function Header() {
                 <li className="navLi">
                   <NavLink to="/login">
                     {({ isActive }) => (
-                      <span className={isActive ? activeClassName : undefined}>
+                      <span style={isActive ? activeStyle : undefined}>
                         Login
                       </span>
                     )}

@@ -3,3 +3,7 @@
   justify-content: center;
   z-index: 0;
 }
+.imgs {
+  padding: 15px;
+  border-radius: 25px;
+}
