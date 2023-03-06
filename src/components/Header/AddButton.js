@@ -35,22 +35,18 @@ export default function AddButton() {
       >
         <Box sx={style}>
           <div className="modalTitleBox">
-            <h2>Add a new photo</h2>
+            <h3>Add a new photo</h3>
           </div>
           <form className="modalFormBox">
-            <div>
-              <label>Label</label>
-              <br />
-              <input placeholder="Suspendisse elit massa" />
-            </div>
-            <div>
-              <label>Photo URL</label>
-              <br />
-              <input placeholder="https://unsplash.com/photos/oqjZC4zXfqg" />
-            </div>
+            <label>Label</label>
+            <input placeholder="Suspendisse elit massa" />
+            <label>Photo URL</label>
+            <input placeholder="https://unsplash.com/photos/oqjZC4zXfqg" />
             <div className="addModalBtn">
-              <Button onClose={() => handleClose}>Cancel</Button>
-              <Button>Submit</Button>
+              <button className="addModalBtnCancel" onClose={() => handleClose}>
+                Cancel
+              </button>
+              <button className="addModalBtnSubmit">Submit</button>
             </div>
           </form>
         </Box>

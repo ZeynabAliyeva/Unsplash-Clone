@@ -27,15 +27,17 @@ function Header() {
   return (
     <div className="headerWrapper">
       <div className="headerLeft">
-        <div className="unsplash_info_box">
-          <img className="unsplash_icon" src={unsplashicon} />
-          <div className="unsplash_title_box">
-            <h3>My Unsplash</h3>
-            <p>
-              <a href="#">devchallenges.io</a>
-            </p>
+        <NavLink to='/'>
+          <div className="unsplash_info_box">
+            <img className="unsplash_icon" src={unsplashicon} />
+            <div className="unsplash_title_box">
+              <h3>My Unsplash</h3>
+              <p>
+                <a href="#">devchallenges.io</a>
+              </p>
+            </div>
           </div>
-        </div>
+        </NavLink>
         <div className="formBox">
           <form className="headerForm">
             <img className="srcIcon" src={searcicon} />

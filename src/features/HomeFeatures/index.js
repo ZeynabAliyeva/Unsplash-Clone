@@ -7,17 +7,24 @@ import "./index.css";
 function HomeFeatures() {
   return (
     <div className="imgBox">
-      <Box sx={{ width: "90%", height: "100vh", overflowY: "scroll" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
+      <Box sx={{ width: "90%", height: "100vh" }}>
+        <ImageList
+          variant="masonry"
+          cols={4}
+          gap={40}
+          className="image-wrapper"
+        >
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
               <img
                 className="imgs"
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                title={item.title}
                 alt={item.title}
                 loading="lazy"
               />
+              <div className="image-title">{item.title}</div>
             </ImageListItem>
           ))}
         </ImageList>

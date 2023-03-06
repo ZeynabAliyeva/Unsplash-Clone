@@ -1,9 +1,28 @@
 .imgBox {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   z-index: 0;
 }
+.image-wrapper {
+  position: relative;
+  margin: 10px;
+}
+.image-wrapper:hover .image-title {
+  display: block;
+}
+.image-title {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+}
 .imgs {
-  padding: 15px;
-  border-radius: 25px;
+  border-radius: 20px;
 }

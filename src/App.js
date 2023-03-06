@@ -1,5 +1,4 @@
 import "./Reset.css";
-import "./App.css";
 import PageLayout from "./components/PageLayout";
 import Routers from "./routers/Routers";
 
