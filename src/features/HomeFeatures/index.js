@@ -3,8 +3,18 @@ import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import "./index.css";
+import { useState } from "react";
 
 function HomeFeatures() {
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(-1);
+  };
   return (
     <div className="imgBox">
       <Box sx={{ width: "90%", height: "100vh" }}>
@@ -14,17 +24,26 @@ function HomeFeatures() {
           gap={40}
           className="image-wrapper"
         >
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
+          {itemData.map((item, index) => (
+            <ImageListItem
+              key={item.img}
+              className="image-list-item"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
               <img
                 className="imgs"
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                title={item.title}
                 alt={item.title}
                 loading="lazy"
               />
-              <div className="image-title">{item.title}</div>
+              {hoveredIndex === index && (
+                <div className="hoverWrapper">
+                  <button className="hoverDeleteBtn">Delete</button>
+                  <p className="image-title">{item.title}</p>
+                </div>
+              )}
             </ImageListItem>
           ))}
         </ImageList>
