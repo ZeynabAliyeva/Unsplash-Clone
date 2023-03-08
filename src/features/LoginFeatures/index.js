@@ -106,10 +106,7 @@ function LoginFeatures() {
               helperText={errors?.password ? errors.password.message : null}
               onChange={passwordHandler}
             />
-            <ReCAPTCHA
-              sitekey="6Lf4UogkAAAAAJwL3aobfuyiymu12TZOEaze7HlW"
-              onChange={onChange}
-            />
+            
             <Button
               type="submit"
               fullWidth
