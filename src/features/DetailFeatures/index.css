@@ -5,6 +5,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  height: 86vh;
 }
 
 .detailHeader {
@@ -56,6 +57,7 @@
 .commantTitleBox {
   display: flex;
   align-items: center;
+  margin-top: 35px;
 }
 
 .commantTitleBox h3 {
@@ -118,3 +120,24 @@
   height: 20px;
   margin-right: 5px;
 }
+.commentForm {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 35px;
+}
+ .commentForm img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.commentForm input {
+  border: 1px solid;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-left: 0;
+  padding: 10px;
+}
+
+

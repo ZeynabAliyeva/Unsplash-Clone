@@ -13,7 +13,7 @@ function DetailFeatures() {
           <p>Anita Austvika</p>
         </div>
         <div className="favIconBox">
-          <img src={heart}/>
+          <img src={heart} />
         </div>
       </div>
       <div className="detailImgCard">
@@ -41,10 +41,14 @@ function DetailFeatures() {
               <p>1mo</p>
               <p>Reply</p>
               <p className="fav">
-                <img src={heart}/>4
+                <img src={heart} />4
               </p>
             </div>
           </div>
+        </div>
+        <div className="commentForm">
+          <img src={ovnerAccount} />
+          <input placeholder="Add a comment" />
         </div>
       </div>
     </div>
