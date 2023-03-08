@@ -39,9 +39,9 @@ function HomeFeatures() {
                 loading="lazy"
               />
               {hoveredIndex === index && (
-                <div className="hoverWrapper">
-                  <button className="hoverDeleteBtn">Delete</button>
+                <div className="image-overlay">
                   <p className="image-title">{item.title}</p>
+                  <button className="hoverDeleteBtn">Delete</button>
                 </div>
               )}
             </ImageListItem>

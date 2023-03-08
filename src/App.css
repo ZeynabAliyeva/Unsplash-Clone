@@ -13,3 +13,6 @@
   font-family: "Noto Sans";
   src: url(./assets/fonts/NotoSans-Bold.ttf) format("opentype");
 }
+.PageLayoutWrapper {
+	padding-top: 120px;
+}

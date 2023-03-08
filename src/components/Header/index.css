@@ -2,7 +2,11 @@
   height: 100px;
   display: flex;
   justify-content: space-between;
-  margin: 0 65px;
+  position: fixed;
+  padding: 0 65px;
+  z-index: 10;
+  width: 100%;
+  background-color: #fff;
 }
 .headerLeft {
   max-width: 600px;
@@ -74,7 +78,7 @@
   font-size: 15px;
   margin-left: 35px;
 }
-.user_info a:hover{
+.user_info a:hover {
   color: gray;
 }
 .srcIcon {

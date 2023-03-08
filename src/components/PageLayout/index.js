@@ -1,12 +1,16 @@
-import React from 'react'
-import Header from '../Header'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "../Header";
 
 function PageLayout() {
   return (
     <>
-    <Header/>
+      <Header />
+      <div className="PageLayoutWrapper">
+        <Outlet />
+      </div>
     </>
-  )
+  );
 }
 
-export default PageLayout
+export default PageLayout;
