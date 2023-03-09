@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../network/api';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { TextField, Box, Container, Typography, Button } from '@mui/material';
+import { authContext } from '../../store/AuthContext';
 
 const schema = yup
 	.object({
@@ -17,6 +18,7 @@ function LoginFeatures() {
 	const [verified] = useState('');
 	const [email, setEmail] = useState('zeynabma@code.edu.az');
 	const [password, setPassword] = useState('123');
+	const { setCurrentUser } = useContext(authContext);
 	const {
 		register,
 		handleSubmit,
@@ -36,6 +38,8 @@ function LoginFeatures() {
 		api
 			.add('/users/login', user)
 			.then((res) => {
+				localStorage.setItem('user', JSON.stringify(res));
+				setCurrentUser(JSON.parse(localStorage.getItem('user')));
 				navigate('confirmcode', { state: { userId: res._id } });
 			})
 			.catch((err) => {
