@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
-import ConfirmCode from "../features/LoginFeatures/ConfirmCode";
 import Admin from "../pages/Admin";
 import Detail from "../pages/Detail";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Profil from "../pages/Profile";
+import ConfirmCode from "../features/LoginFeatures/ConfirmCode";
 
 function Routers() {
   return (
@@ -18,7 +18,7 @@ function Routers() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profil" element={<Profil />} />
-          <Route path="/login/confirmCode" element={<ConfirmCode />} />
+          <Route path="/login/confirmcode" element={<ConfirmCode />} />
         </Route>
       </Routes>
     </>

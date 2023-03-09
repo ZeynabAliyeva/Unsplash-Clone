@@ -36,7 +36,7 @@ function LoginFeatures() {
 		api
 			.add('/users/login', user)
 			.then((res) => {
-				navigate('confirmCode', { state: { userId: res._id } });
+				navigate('confirmcode', { state: { userId: res._id } });
 			})
 			.catch((err) => {
 				console.log('Err', err);

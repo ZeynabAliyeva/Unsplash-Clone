@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import unsplashicon from "../../assets/icons/unsplash.svg";
 import searcicon from "../../assets/icons/search.png";
 import "./index.css";
@@ -7,6 +7,8 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import AddButton from "./AddButton";
+import { useDispatch, useSelector } from "react-redux";
+import { setLogout } from "../../redux/slices/auth";
 
 function Header() {
   let activeStyle = {
@@ -15,6 +17,15 @@ function Header() {
   let activeClassName = "underline";
   let menuRef = useRef();
   const [open, setOpen] = useState(false);
+  let login = useSelector((state) => state.authReducer);
+  console.log(login);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleCloseLogout = () => {
+    dispatch(setLogout());
+    window.localStorage.removeItem("token");
+    navigate("/");
+  };
 
   useEffect(() => {
     let handler = (e) => {
@@ -27,7 +38,7 @@ function Header() {
   return (
     <div className="headerWrapper">
       <div className="headerLeft">
-        <NavLink to='/'>
+        <NavLink to="/">
           <div className="unsplash_info_box">
             <img className="unsplash_icon" src={unsplashicon} />
             <div className="unsplash_title_box">
@@ -51,7 +62,7 @@ function Header() {
         </div>
         <div className="user_info">
           <p>
-            <a href="#">Sing up</a>
+            <NavLink to="/login">Sing up</NavLink>
           </p>
         </div>
         <Box ref={menuRef} className="hamburgerMenu">
@@ -106,10 +117,10 @@ function Header() {
                   </NavLink>
                 </li>
                 <li className="navLi">
-                  <NavLink to="/login">
+                  <NavLink to="/" onClick={handleCloseLogout}>
                     {({ isActive }) => (
                       <span style={isActive ? activeStyle : undefined}>
-                        Login
+                        Logout
                       </span>
                     )}
                   </NavLink>

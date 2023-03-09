@@ -25,8 +25,8 @@ function DetailFeatures() {
           <p>Like Quantity:327</p>
         </div>
         <div className="commantTitleBox">
-          <img className="arrowIcon" src={angleDown} />
           <h3>comments</h3>
+          <img className="arrowIcon" src={angleDown} />
         </div>
         <div className="commentsBox">
           <div className="commentRight">
