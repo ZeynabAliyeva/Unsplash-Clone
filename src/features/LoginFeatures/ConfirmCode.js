@@ -8,7 +8,7 @@ function ConfirmCode() {
   let location = useLocation();
   let navigate = useNavigate();
 
-  const { setloginStatus, setToken } = useContext(authContext);
+  const { setloginStatus } = useContext(authContext);
   const [confirmCode, setconfirmCode] = useState("");
 
   const confirm = (e) => {
@@ -20,7 +20,6 @@ function ConfirmCode() {
       })
       .then((res) => {
         localStorage.setItem("token", `${res.token}`);
-        setToken(true);
         setloginStatus(true);
         navigate("/");
       })

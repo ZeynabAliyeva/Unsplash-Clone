@@ -5,17 +5,16 @@ export const authContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [loginStatus, setloginStatus] = useState(false);
   const [fetch, setFetch] = useState(false);
-  const [token, setToken] = useState(null);
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user"))
   );
-  //   useEffect(() => {
-  //     if (currentUser) {
-  //       setloginStatus(true);
-  //     } else {
-  //       setloginStatus(false);
-  //     }
-  //   }, currentUser);
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setloginStatus(true);
+    } else {
+      setloginStatus(false);
+    }
+  }, [currentUser]);
 
   let value = {
     loginStatus,
@@ -25,6 +24,5 @@ export const AuthProvider = ({ children }) => {
     fetch,
     setFetch,
   };
-  console.log(currentUser);
   return <authContext.Provider value={value}>{children}</authContext.Provider>;
 };

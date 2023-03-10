@@ -47,7 +47,6 @@ export default function AddButton() {
     }
   };
 
-  console.log(imageUrl);
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -56,6 +55,7 @@ export default function AddButton() {
         imageUrl,
       };
       const { data } = await axiosInstance.post("/posts", fields);
+      console.log(data);
     } catch (err) {
       console.warn(err);
       alert("post is not create");

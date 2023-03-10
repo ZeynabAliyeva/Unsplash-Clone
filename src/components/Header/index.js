@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import unsplashicon from "../../assets/icons/unsplash.svg";
 import searcicon from "../../assets/icons/search.png";
 import "./index.css";
@@ -30,6 +30,7 @@ function Header() {
 
   const onClickLogOut = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
     setloginStatus(false);
     setCurrentUser(null);
   };
@@ -63,6 +64,7 @@ function Header() {
           {loginStatus ? (
             <img
               src={currentUser.avatar ? currentUser.avatar : avatar}
+              alt=""
               className="user_infoTitle"
             ></img>
           ) : (

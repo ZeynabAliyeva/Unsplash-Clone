@@ -50,7 +50,7 @@
 .unsplash_title_box {
 	padding: 10px;
 }
-.unsplash_title_box a {
+.unsplash_title_box span {
 	font-style: normal;
 	font-weight: 500;
 	font-size: 12px;

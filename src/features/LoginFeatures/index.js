@@ -48,7 +48,6 @@ function LoginFeatures() {
 				alert('Email or password invalid!');
 			});
 	};
-
 	const onSubmit = (data) => {
 		userLogin();
 		console.log(data);
