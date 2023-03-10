@@ -15,5 +15,6 @@ export const AuthProvider = ({ children }) => {
 		fetch,
 		setFetch,
 	};
+	console.log(currentUser);
 	return <authContext.Provider value={value}>{children}</authContext.Provider>;
 };

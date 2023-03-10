@@ -40,6 +40,7 @@ function LoginFeatures() {
 			.then((res) => {
 				localStorage.setItem('user', JSON.stringify(res));
 				setCurrentUser(JSON.parse(localStorage.getItem('user')));
+	
 				navigate('confirmcode', { state: { userId: res._id } });
 			})
 			.catch((err) => {

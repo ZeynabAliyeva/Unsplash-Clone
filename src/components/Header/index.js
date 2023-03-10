@@ -17,7 +17,6 @@ function Header() {
 	let menuRef = useRef();
 	const [open, setOpen] = useState(false);
 	const { loginStatus, currentUser, setCurrentUser } = useContext(authContext);
-	console.log(currentUser);
 
 	useEffect(() => {
 		let handler = (e) => {
@@ -26,7 +25,7 @@ function Header() {
 			}
 		};
 		document.addEventListener('mousedown', handler);
-	});
+	}, []);
 
 	const onClickLogOut = () => {
 		setCurrentUser(JSON.parse(localStorage.remove('user')));
