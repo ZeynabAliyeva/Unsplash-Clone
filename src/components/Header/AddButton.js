@@ -5,6 +5,7 @@ import "./index.css";
 import { useState } from "react";
 import { axiosInstance } from "../../network/axiosInstance";
 import { useRef } from "react";
+import { api } from "../../network/api";
 
 const style = {
   position: "absolute",
@@ -33,14 +34,8 @@ export default function AddButton() {
       const formData = new FormData();
       const file = e.target.files[0];
       formData.append("image", file);
-      console.log(formData);
-      const token = localStorage.getItem("token"); // assuming the token is stored in local storage
-      const { data } = await axiosInstance.post("/upload", formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setImageUrl(data.url);
+      const img = await api.addPhoto("/upload", formData);
+      setImageUrl(img.url);
     } catch (err) {
       console.warn(err);
       alert("image is not sent");
@@ -49,17 +44,21 @@ export default function AddButton() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    const user = JSON.parse(localStorage.getItem("user"))._id;
     try {
-      const fields = {
-        text,
+      const data = {
+        user: user,
         imageUrl,
+        text,
       };
-      const { data } = await axiosInstance.post("/posts", fields);
-      console.log(data);
+      await api.add("/posts", data);
+      setImageUrl("");
+      setText("");
     } catch (err) {
       console.warn(err);
       alert("post is not create");
     }
+    setOpen(false);
   };
 
   return (

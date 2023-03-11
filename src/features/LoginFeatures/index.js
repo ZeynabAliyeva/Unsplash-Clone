@@ -17,7 +17,7 @@ const schema = yup
 function LoginFeatures() {
 	const [verified] = useState('');
 	const [email, setEmail] = useState('zeynabma@code.edu.az');
-	const [password, setPassword] = useState('123');
+	const [password, setPassword] = useState('54321');
 	const { setCurrentUser } = useContext(authContext);
 	const {
 		register,
@@ -62,7 +62,6 @@ function LoginFeatures() {
 
 	return (
 		<>
-			{/* <button onClick={() => userLogin()}>Login</button> */}
 			<Container component="main" maxWidth="xs">
 				<form method="POST" className="form" onSubmit={handleSubmit(onSubmit)}>
 					<Box

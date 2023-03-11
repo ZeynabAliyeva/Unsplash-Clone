@@ -1,12 +1,18 @@
-import React from 'react'
-import AdminFeatures from '../../features/AdminFeatures'
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import AdminFeatures from "../../features/AdminFeatures";
+
+
+const client = new QueryClient();
 
 function Admin() {
   return (
     <>
-    <AdminFeatures/>
+      <QueryClientProvider client={client}>
+        <AdminFeatures />
+      </QueryClientProvider>
     </>
-  )
+  );
 }
 
-export default Admin
+export default Admin;
